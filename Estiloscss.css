@@ -1,13 +1,10 @@
-#classe, .classi, .classo {
+.classe, .classi, .classo {
     font-style: italic;
-}
-body{
-    background-color: #00ccff;
 }
 .classu{
     color: #000000;
 background-color: blueviolet;
-padding: 25px;
+padding: 5px;
 border-top: 3px  solid black;
 border-left: 3px dotted black;
 border-right: 3px dashed black;
@@ -15,7 +12,16 @@ margin: 10px;
 }
 .classa{
     background-color: antiquewhite;
+    margin: 10px;
 }
 .fototopo{
     border-radius: 50%;
+}
+.classe, .classi{
+    padding-left: 25px;
+    text-decoration: underline;
+    
+}
+.geral{
+    background-color: #427a88;
 }
