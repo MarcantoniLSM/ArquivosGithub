@@ -42,3 +42,11 @@ body .container-fluid{
 .btn{
     cursor: pointer;
 }
+.item{
+    width: 250px;
+    height: 300px;
+    size: 100%;
+}
+.series{
+    color: #fff;
+}
