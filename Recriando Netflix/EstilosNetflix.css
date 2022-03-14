@@ -16,6 +16,29 @@ li{
     list-style-type: none;
     margin: 10px;
 }
-li :hover{
+body nav :hover{
     color: #f00;
+}
+body .container-fluid{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.capa{
+    height: 600px;
+    color: #fff;
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url('https://static.wikia.nocookie.net/universocinematograficomarvel/images/2/21/Daredevil_S1_Title_Card.png/revision/latest?cb=20181028000755&path-prefix=pt');
+    background-size: cover;
+}
+.capatop{
+    padding-top: 300px;
+    padding-left: 5px;
+}
+.capafim{
+    padding-left: 5px;
+}
+.btn{
+    cursor: pointer;
 }
