@@ -1,4 +1,4 @@
-var atuall = document.getElementById(inicial);
+var atuall = document.getElementById('inicial');
 var atual = 0;
 function remover() {
     atual = atual - 1;
