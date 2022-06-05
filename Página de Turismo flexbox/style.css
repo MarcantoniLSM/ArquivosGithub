@@ -7,7 +7,7 @@
 a{
     text-decoration: none;
 }
-ul{
+header ul{
     list-style: none;
 }
 .topo{
@@ -25,9 +25,9 @@ header{
 }
 .intro{
     display: flex;
-    height: 60vh;
+    height: 40vh;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .p3{
 background-color: #6495ED;
@@ -45,4 +45,74 @@ text-align: center;
 img{
     display: block;
     width: 100%;
+    width: 350px;
 }
+
+.im2{
+    margin-right: 100px;
+   }
+   .cont2{
+       justify-content: space-between;
+   }
+   .cont2 img{
+       width: 250px;
+   }
+   .b3 {
+    text-align: center;
+    color: azure;
+   }
+   .b1{
+       background-color: #6495ED;
+       padding: 1%;
+   }
+   .flex-containe{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       color: azure;
+   }
+   .flex-containe a{
+       background-color: azure;
+       border-radius: 25px;
+       color: #6495ED;
+       padding: 1%;
+   }
+   .t2{
+       display: flex;
+       flex-direction: column;
+       margin: 10%;
+       border: #6495ED solid 3px;
+       padding-left: 6%;
+       padding-right: 6%;
+       padding-bottom: 1%;
+       padding-top: 2%;
+       align-items: center;
+   }
+   .lista{
+       align-items: flex-end;
+       justify-content: center;
+       margin-top: 0;
+   }
+   .j1{
+       list-style: none;
+   }
+   .t2 h3{
+       border-bottom: #6495ED 3px solid;
+   }
+   .h2{
+       font-size: 32px;
+       text-align: center;
+       margin-top: 5%;
+       margin-bottom: 1%;
+   }
+   footer{
+       text-align: center;
+       background-color: grey;
+       padding: 2%;
+   }
+   @media(max-width: 992px){
+       .flex-container{
+           flex-direction: column;
+       }
+   }
