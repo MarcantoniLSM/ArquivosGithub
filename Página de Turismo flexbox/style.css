@@ -1,0 +1,48 @@
+.flex-container{
+    display: flex;
+    max-width: 992px;
+    margin: auto;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.topo{
+    background-color: #6495ED;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.itens li{
+    color: azure;
+    margin: 10px;
+}
+header{
+    color: azure;
+}
+.intro{
+    display: flex;
+    height: 60vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.p3{
+background-color: #6495ED;
+color: azure;
+border-radius: 30px;
+width: 100px;
+text-align: center;
+}
+.turi{
+    color: azure;
+}
+.q3{
+    border-left: 4px solid #6495ED;
+}
+img{
+    display: block;
+    width: 100%;
+}
