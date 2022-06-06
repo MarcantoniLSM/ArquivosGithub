@@ -1,0 +1,57 @@
+body{
+    background-color: azure;
+    font-family: Gill Sans, sans-serif;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+}
+.container3{
+    border: 2px lightgrey solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    border-radius: 5px;
+}
+.container4{
+    display: flex;
+    flex-direction: column;
+    border: 2px lightgray solid;
+    text-decoration: none;
+    align-items: center;
+    margin: 2%;
+    width: 100%;
+    border-radius: 5px;
+}
+.container5{
+    display: flex;
+}
+.space{
+    margin: 2%;
+}
+.space2{
+    margin: 7%;
+}
+.img3{
+    border-radius: 100%;
+}
+.button{
+    background-color: #4169E1;
+    color: azure;
+    border: 3px;
+    padding: 2%;
+    border-radius: 10px;
+}
+a{
+    color: #4169E1;
+    text-decoration: none;
+}
