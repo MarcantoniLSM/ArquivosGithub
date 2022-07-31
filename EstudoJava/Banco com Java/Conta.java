@@ -1,7 +1,7 @@
 public abstract class Conta implements IConta {
     protected int agencia;
     protected int numero;
-    protected int saldo;
+    protected float saldo;
     protected static final int AGENCIA_PADRAO = 1;
     protected static int SEQUENCIAL = 1;
 
@@ -13,7 +13,7 @@ public abstract class Conta implements IConta {
         return numero;
     }
 
-    public int getSaldo() {
+    public float getSaldo() {
         return saldo;
     }
 
