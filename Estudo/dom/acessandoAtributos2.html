@@ -17,7 +17,11 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('#compras')
+        console.log(lista.getAttribute('destino'))
+        lista.setAttribute('status', 'aberto')
+        lista.removeAttribute('status')
+        console.log(lista.getAttribute('status'))
     </script>
 </body>
 

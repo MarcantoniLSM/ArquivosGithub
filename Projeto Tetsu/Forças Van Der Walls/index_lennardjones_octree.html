@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=TiS9IA5BsDj307Sy6QMdwXzh2L1PGMsyYcx0_98wMsHGPIRBwW8AABXvigwy2WgFRKnh39MLzZxLgmsy8xTk2u8ekuLoBzDx8UVf5ByhoohMQ5gVYd2wre1UAL4-g-sDWmDJ2oHIKaJE7X0arZB2kLzaf0XXPv1r1_DM9d-8QVM" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZGlzY29yZGFwcC5jb20vYXR0YWNobWVudHMvMTEyMTQwNTg5NjI1ODQ5NDU0NC8xMTIxODY5NjI1NDQxOTI3MzA5L2luZGV4X2xlbm5hcmRqb25lc19vY3RyZWUuaHRtbA"/><style> body { margin: 0; } </style>
+	<script src="3d-force-graph.js"></script>
+	<script src="d3-octree.min.js"></script>
+	<script src="d3-force-3d-md.js"></script>
+	
+    
+    <style type="text/css">
+        .graph-info-msg {
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: lavender;
+            opacity: 0.7;
+            font-size: 22px;
+            position: absolute;
+            font-family: Sans-serif;
+        }
+      
+        .scene-container .clickable {
+            cursor: pointer;
+        }
+      
+        .scene-container .grabbable {
+            cursor: move;
+            cursor: grab;
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+        }
+      
+        .scene-container .grabbable:active {
+            cursor: grabbing;
+            cursor: -moz-grabbing;
+            cursor: -webkit-grabbing;
+        }
+    </style>
+
+    <style type="text/css">
+        .scene-nav-info {
+            bottom: 5px;
+            width: 100%;
+            text-align: center;
+            color: slategrey;
+            opacity: 0.7;
+            font-size: 10px;
+        }
+        
+        .scene-tooltip {
+            color: lavender;
+            font-size: 15px;
+        }
+        
+        .scene-nav-info, .scene-tooltip {
+            position: absolute;
+            font-family: sans-serif;
+            pointer-events: none;
+        }
+        
+        .scene-container canvas:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="3d-graph">
+        <div style="position: relative;">
+            <div>
+                <div class="scene-container" style="position: relative; width: 1920px; height: 937px;">
+                    <div class="scene-nav-info">Left-click: rotate, Mouse-wheel/middle-click: zoom, Right-click: pan</div>
+                    <div class="scene-tooltip" style="top: 314px; left: 1306px; transform: translate(-68.0208%, 21px);"></div>
+                    <canvas width="1920" height="937" style="display: block; touch-action: none; width: 1920px; height: 937px;" class=""></canvas>
+                </div>
+            </div>
+            <div class="graph-info-msg"></div>
+        </div>
+    </div>
+
+    <script>
+		const N = 200;
+		const T = 300;
+		const dt = 0.1;
+		
+		// atomic data
+		const mass = {
+			"Ar": 39.948,
+		};
+		
+		const sigma = {
+			"Ar": 3.4,
+		};
+		
+		const epsilon = {
+			"Ar": 0.0103,
+		};
+		// Determine a random initial velocity 
+		function init_velocity(T, mass){
+			boltzmann = 1.380649*10**(-23);
+			return (Math.random() -0.5) * (boltzmann * T /(mass * 1.602*10**(-19)))**0.5;
+		}
+		
+		const gData = {
+          /*
+		  nodes: [...Array(N).keys()].map(() => ({
+			  // Initial velocity in random direction
+			  name:"Ar",
+			  mass:18,
+			  group:1,
+			})),
+			*/
+			nodes: [
+                {id: 1, "name":"Ar", "mass":39.948, "size":18, "group": 1, "x":1, "y":0, "z":0, "vx":-0.00981027},
+                {id: 2, "name":"Ar", "mass":39.948, "size":18, "group": 1, "x":5, "y":0, "z":0, "vx":-0.00702366},
+                {id: 3, "name":"Ar", "mass":39.948, "size":18, "group": 1, "x":10, "y":0, "z":0,"vx":-0.00182947},
+            ],
+			
+          links: []
+        };		
+		
+		let nodes = gData.nodes;
+		
+		nodes.forEach(function (node){
+			node.x = Math.random()*(N)*1;
+			node.y =0// Math.random()*(N)*1;
+			node.z = 0//Math.random()*(N)*1;
+			node.vx = init_velocity(T, mass[node.name]);
+			node.vy = 0//init_velocity(T, mass[node.name]);
+			node.vz = 0//init_velocity(T, mass[node.name]);
+			node.force_x = 0;
+			node.force_y = 0;
+			node.force_z = 0;
+			
+		});
+		
+		
+        const Graph = ForceGraph3D()
+          (document.getElementById('3d-graph'));
+		  
+		 Graph.cooldownTime(Infinity)
+		  .d3AlphaDecay(0)
+		  .d3VelocityDecay(0)
+		  
+		  // max number of ticks
+		  //.cooldownTicks(30)
+		  /**/
+		  // callback after tick
+		  .onEngineTick(function(){
+			//console.log(nodes[0].force_x + " " + nodes[1].force_x + " " + nodes[2].force_x );
+			//console.log(nodes[0].vx + " " + nodes[1].vx + " " + nodes[2].vx );
+		  })
+		  
+		  // Deactivate existing forces
+		  .d3Force('center', null)
+		  .d3Force('charge', null)
+		  
+		  // Add Lennard-Jones potential 
+		  .d3Force('lennard-jones', d3.forceLennardJones())
+		  
+		  // Add bounding box forces		  
+		  .d3Force('box', () => {
+			
+			const CUBE_HALF_SIDE = Graph.nodeRelSize() * N * 0.25;
+
+			nodes.forEach(node => {
+			  const x = node.x || 0, y = node.y || 0, z = node.z || 0;
+
+			  // bounce on box walls
+			  if (Math.abs(x) > CUBE_HALF_SIDE) { node.vx *= -1; }
+			  if (Math.abs(y) > CUBE_HALF_SIDE) { node.vy *= -1; }
+			  if (Math.abs(z) > CUBE_HALF_SIDE) { node.vz *= -1; }
+			});
+		  })
+		  
+		
+		  // Add nodes
+			.graphData(gData)
+			.nodeLabel("name")
+			.nodeAutoColorBy("group")
+			//.nodeVal(function volume(i){return (4/3) *Math.Pi * sigma[i.name]**3});
+			.nodeVal(function volume(i){return sigma[i.name]/20});
+			//.nodeTitle("name");
+		  
+    </script>
+</body>
+</html>
