@@ -1,0 +1,33 @@
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1%;
+}
+
+header{
+    padding: 0.5%;
+    display: flex;
+    justify-content: center;
+}
+
+input{
+    color: #c70028;
+}
+
+.bg-red{
+    background-color: #c70028;
+}
+
+.campos{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.botao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

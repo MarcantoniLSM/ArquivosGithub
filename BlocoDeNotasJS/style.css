@@ -1,0 +1,41 @@
+body{
+    background-color: #E9967A;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2%;
+}
+
+textarea{
+    border-radius: 1rem;
+    background-color: #CD5C5C;
+    border: 0;
+}
+
+button{
+    margin: 1%;
+    background-color: #CD5C5C;
+    border: 0;
+}
+
+.add{
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.nota{
+    background-color: #CD5C5C;
+    border-radius: 1rem;
+    padding: 5px;
+}
+
+.configuracao{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #FFB6C1;
+    border-radius: 1rem;
+}
+
+.configuracao button{
+    background-color: transparent;
+}
