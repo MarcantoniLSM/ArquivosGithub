@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 2491px;
+}
+
+#one{
+    background-size: cover;
+    width: 1440px;
+    height: 605px;
+    background:-webkit-radial-gradient(circle,rgba(51, 168, 219,0.5), rgba(0,0,0,0.5));
+    background-image: url(./images/img1.png);
+    text-align: center;
+    padding-top:100px;
+    box-sizing: border-box;
+    
+}
+
+#one h1{
+    color: #33A8DB;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+#one p{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    width: 510px;
+}
+
+#one h3{
+    color: #31A8DD;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    border: solid #31A8DD;
+}
+
+#two{
+    background-color: black;
+    width: 1440px;
+    height: 605px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#two h2{
+    color: #31A8DD;
+}
+
+#two p{
+    color: white;
+    width: 792px;
+}
+
+#two li{
+    color: white;
+    width: 535px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: solid;
+}
+
+#three{
+    background-image: url(./images/img3.png);
+    width: 1440px;
+    height: 363px;
+    background-attachment: fixed;
+    color: white;
+}
+
+#four{
+    width: 1440px;
+    height: 740px;
+    background-color: black;
+    text-align: center;
+}
+
+#four h2{
+    color: #33A8DB;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#four p{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+footer{
+    width: 1440px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
