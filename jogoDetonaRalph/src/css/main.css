@@ -1,0 +1,79 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-image: url('../imagens/wall.png');
+}
+
+header{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    height: 9rem;
+    width: 100%;
+    color:   #ffffff;
+    background-color: #000000;
+}
+
+.tempo{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.tempo h2:first-child{
+    color: #ff0000;
+}
+
+.pontos{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.pontos h2:first-child{
+    color: #ff0000;
+}
+
+.vidas{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    align-items:center;
+    justify-content: space-around;
+}
+
+.vidas h2:first-child{
+    color: #ff0000;
+}
+
+.painel{
+    border-top: solid 2px #ff0000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.linhas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.quadrado{
+    height: 150px;
+    width: 150px;
+    border: 1px solid;
+
+}
+
+.alvo{
+    background-image: url(../imagens/ralph.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+}
