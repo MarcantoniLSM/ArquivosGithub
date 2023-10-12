@@ -1,0 +1,85 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: #fc1e8a;
+    background: linear-gradient(325deg,
+    #03001e 0%,
+    #7303c0 30%,
+    #ec38bc 70%,
+    #fdeff9 100%);
+    border: #03001e solid 3px;
+    user-select: none;
+}
+
+h1{
+   font-size: 3em;
+   color: #fdeff9;
+   text-transform: uppercase;
+   letter-spacing: 0.1rem;
+}
+
+button{
+    width: 50vh;
+    color: #03001e;
+    background-color: #fdeff9;
+    border: none;
+    font-size: 1.5em;
+    padding: 5px 10px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+button:focus{
+    color: #ec38bc;
+    background-color: #03001e;
+    border: solid 3px #ec38bc;
+}
+
+main{
+    width: 430px;
+    height: 430px;
+    border: #03001e solid 3px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fdeff9;
+    border: #03001e solid 3px;
+    font-size: 4em;
+
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #7303c0;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.selecionada{
+    transform: rotateY(0deg);
+}
+
+.selecionada::after, .acerto::after{
+    transform: rotateY(180deg);
+}
