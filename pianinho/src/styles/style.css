@@ -1,0 +1,132 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e3f2fd;
+    color: #b2b2b2;
+    font-family: 'poppins', sans-serif;
+    user-select: none;
+}
+
+body header, body main{
+    width: 780px;
+    background-color: black;
+    padding: 1rem;
+}
+
+header{
+    border-radius: 30px 30px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main{
+    border-radius: 0 0 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    font-size: 1.6rem;
+}
+
+.coluna{
+    margin: 5px;
+}
+
+span{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+span input{
+    margin: 0px 10px;
+}
+
+.sliderVolume input{
+    accent-color: #e3f2fd;
+}
+
+.temLetra input{
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    border-radius: 30px;
+    background-color: #4b4b4b;
+    cursor: pointer;
+    position: relative;
+}
+
+.temLetra input::before{
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color:#8c8c8c;
+    position: absolute;
+    border-radius: inherit;
+    top: 0.3rem;
+    left: 0.3rem;
+    transform: rotateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.temLetra input:checked:before{
+    left: 2.1rem;
+    background-color: #e3f2fd;
+}
+
+.piano{
+    display: flex;
+}
+
+.tecla{
+    cursor: pointer;
+    list-style: none;
+    color: #8c8c8c;
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.branca{
+    width: 70px;
+    height: 230px;
+    background-color: #e3f2fd;
+    border: solid black;
+    border-radius: 10px;
+    margin: 3px
+
+}
+
+.branca.active{
+    box-shadow: inset -5px -5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.preta{
+    width: 44px;
+    height: 140px;
+    background: linear-gradient(dimgrey, black);
+    border-radius: 0 0 5px 5px;
+    z-index: 2;
+    margin: 6px -25px 0 -25px;
+
+}
+
+.preta.active{
+    box-shadow: inset -5px -5px 20px rgba(255, 255, 255, 0.2);
+}
+
+.hide span{
+    display: none;
+}
