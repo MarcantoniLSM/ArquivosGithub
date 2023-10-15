@@ -1,0 +1,141 @@
+body{
+    cursor: url("../assets/cursor/yugicursor.png"), default;
+}
+
+button, a, img:hover, button:hover, a:hover{
+    cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), default;
+}
+
+
+.display_none{
+    display: none;
+}
+
+.fundo{
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.fundo video{
+    height: 100vh;
+}
+
+.fundo::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,1) 100%);
+    height: 100vh;
+    width: 100vw;
+}
+
+.container{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    height: 100vh;
+    width: 1920px;
+}
+.subLeft{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.avatar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pontuacao{
+    background-color: azure;
+    padding: 30px 5px;
+}
+
+.frame{
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.detalhes_carta{
+    background-color: azure;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 6rem;
+    width: 100%;
+}
+
+.nome_carta{
+    font-size: 0.8rem;
+}
+
+.tipo_carta{
+    font-size: 1rem;
+}
+
+.container__right{
+    width: 75%;
+}
+
+.container_campo{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem;
+}
+
+.batalha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
+}
+
+.batalha .cima{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#proximo{
+    display: none;
+}
+
+.caixa_cartas{
+    height: 9rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carta_em_campo{
+    height: 11.2rem;
+    width: 8rem;
+    border: solid 1px azure;
+    border-radius: 8px;
+}
+
+.card{
+    transform: 0.2s;
+}
+
+.card:hover{
+    transform: scale(1.2);
+}

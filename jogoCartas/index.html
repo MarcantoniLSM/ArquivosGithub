@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Cartas</title>
+
+    <link rel="stylesheet" href="./src/styles/buttons.css">
+    <link rel="stylesheet" href="./src/styles/containers_and_frames.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./src/assets/favicon/Favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <audio id="back-sound" loop>
+        <source src="./src/assets/audios/egyptian_duel.mp3" type="audio/mp3">
+    </audio>
+    <div class="fundo">
+        <video class="video" autoplay loop muted>
+            <source src="./src/assets/video/yugi.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container">
+        <div class="container__left framed-golden-2">
+            <div class="subLeft"><div class="pontuacao frame">
+                <span id="pontuacao"></span>
+            </div>
+            <div id="avatar" class="avatar">
+            </div>
+            <div class="detalhes_carta frame">
+                    <p id="nome_carta" class="nome_carta">Selecione</p>
+                    <p id="tipo_carta" class="tipo_carta">uma carta</p>
+            </div></div>
+            
+        </div>
+        <div class="container__right">
+            <div class="container_campo">
+                <div id="inimigo" class="caixa_cartas framed">
+                </div>
+
+                <div class="batalha">
+                    <div class="cima">
+                        <div class="carta_em_campo">
+                            <img width="125px" height="180px" id="carta_campo_jogador">
+                        </div>
+                        <img height="100px" src="./src/assets/icons/millenium2.png" alt="">
+                        <div class="carta_em_campo">
+                            <img width="125px" height="180px" id="carta_campo_inimigo">
+                        </div>
+                    </div>
+                    <div class="baixo">
+                        <button onclick="novoDuelo()" id="proximo" class="rpgui-button" >ganhou</button>
+                    </div>
+                </div>
+
+                <div id="jogador" class="caixa_cartas framed">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./src/scripts/engine.js" defer></script>
+</body>
+</html>
